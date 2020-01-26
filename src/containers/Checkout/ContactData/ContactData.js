@@ -33,17 +33,17 @@ class ContactData extends Component{
 				valid:false,
 				touched:false
 			},
-			zipCode:{
+			Contact:{
 				elementType:'input',
 				elementConfig:{
 					type:'text',
-					placeholder:'Zip-Code'
+					placeholder:'Contact'
 				},
 				value:'',
 				validation:{
 					required:true,
-					minLength:5,
-					maxLength:5
+					minLength:10,
+					maxLength:10
 				},
 				valid:false,
 				touched:false
@@ -121,6 +121,7 @@ class ContactData extends Component{
 		}
 		axios.post('/orders.json',order)
 		.then(res=>{
+			alert("success")
 			this.setState({
 				
 				loading:false
