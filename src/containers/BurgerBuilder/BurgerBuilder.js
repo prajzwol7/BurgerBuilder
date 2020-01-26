@@ -9,9 +9,11 @@ import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary'
 import BuildControls from '../../components/Burger/BuildControls/BuildControls'
 const INGREDIENT_PRICES = {
 	salad:10,
-	bacon:20,
+	bacon:40,
 	cheese:30,
 	meat:50,
+	mayonaise:20,
+	tomato:10
 }
 
 class BurgerBuilder extends Component{
@@ -25,7 +27,7 @@ class BurgerBuilder extends Component{
 	}
 	componentDidMount(){
 		console.log(this.props);
-		axios.get('https://burger-f1b9f.firebaseio.com/ingredients.json').then(response=>{
+		axios.get('https://burger-b2b46.firebaseio.com/ingredients.json').then(response=>{
 			this.setState({
 				ingredients:response.data
 			});

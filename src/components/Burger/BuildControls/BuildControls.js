@@ -5,7 +5,9 @@ const controls=[
 	{label:'Salad', type:'salad'},
 	{label:'Bacon', type:'bacon'},
 	{label:'Cheese', type:'cheese'},
+	{label:'Tomato', type:'tomato'},
 	{label:'Meat', type:'meat'},
+	{label:'Mayonaise', type:'mayonaise'},
 ];
 const BuildControls=(props)=>(
 		<div className={css.BuildControls}>

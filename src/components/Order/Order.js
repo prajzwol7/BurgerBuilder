@@ -23,7 +23,12 @@ const Order=(props)=>{
 	})
 	return(
 		<div className={css.Order}>
-			<p>Ingredients:{ingredientsOutput}</p>
+			<p>Ingredients:</p>
+			<p className={css.bacon}>Bacon : {props.ingredients.bacon}</p>
+			<p className={css.bacon}>Salad : {props.ingredients.salad}</p>
+			<p className={css.bacon}>Cheese : {props.ingredients.cheese}</p>
+			<p className={css.bacon}>Tomato : {props.ingredients.tomato}</p>
+			<p className={css.bacon}>Mayonaise : {props.ingredients.mayonaise}</p>
 			<p>price :<strong> Rs {props.price}</strong>	</p>
 		</div>
 		);
