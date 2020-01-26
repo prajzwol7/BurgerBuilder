@@ -3,9 +3,11 @@ import css from './BurgerIngredient.css'
 import PropTypes from 'prop-types'
 
 class BurgerIngredient extends Component{
+
 		render(){
+			const {totalCount,type} = this.props;
 		let ingredient=null
-		switch(this.props.type){
+		switch(type){
 			case('bread-bottom'):
 				ingredient=<div className={css.BreadBottom}></div>;
 				break;
@@ -17,27 +19,45 @@ class BurgerIngredient extends Component{
 			);
 			break;
 			case('meat'):
-			ingredient=<div className={css.Meat}>meat</div>;
+			ingredient=<div className={css.Meat} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>meat</div>;
 			break;
 
 			case('cheese'):
-			ingredient=<div className={css.Cheese}>cheese</div>;
+			ingredient=<div className={css.Cheese} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>cheese</div>;
 			break;
 
 			case('bacon'):
-			ingredient=<div className={css.Bacon}>bacon</div>;
+			ingredient=<div className={css.Bacon} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>bacon</div>;
 			break;
 
 			case('salad'):
-			ingredient=<div className={css.Salad}>salad</div>;
+			ingredient=<div className={css.Salad} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>salad</div>;
 			break;
 
 			case('mayonaise'):
-			ingredient=<div className={css.mayonaise}>mayonaise</div>;
+			ingredient=<div className={css.mayonaise} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>mayonaise</div>;
 			break;
 
 			case('tomato'):
-			ingredient=<div className={css.tomato}>tomato</div>;
+			ingredient=<div className={css.tomato} style={{
+					height: totalCount >= 6 ? "4% ": "7%",
+					fontSize: totalCount >= 6  ? "10px": "auto"
+				}}>tomato</div>;
 			break;
 
 			default:

@@ -15,6 +15,7 @@ class Orders extends Component {
             .then(res => {
                 const fetchedOrders = [];
                 for (let key in res.data) {
+                    
                     fetchedOrders.push({
                         ...res.data[key],
                         id: key
@@ -29,10 +30,12 @@ class Orders extends Component {
     }
 
     render () {
+        
         return (
             <div>
                {this.state.orders.map(order=>{
                return <Order key={order.id}
+               orderData={order.orderData}
                ingredients={order.ingredients}
                price={order.price}/>
                })}

@@ -52,9 +52,17 @@ class BurgerBuilder extends Component{
 			});
 	}
 	addIngredientHandler=(type)=>{
+		console.log("state",this.state)
 		const oldCount=this.state.ingredients[type];
 
 		const updatedCount=oldCount+1;
+		console.log("update count",updatedCount)
+		if(updatedCount> 9){
+			alert("Limit no. of ingredients!")
+			return;
+
+
+		}
 		const updatedIngredients={
 			...this.state.ingredients
 		};
@@ -121,14 +129,12 @@ class BurgerBuilder extends Component{
 			disabledInfo[key]=disabledInfo[key]<=0
 		}
 		let orderSummary=null
-		
-				
 		let burger=this.state.error ? <p> Couldn't load ingredients </p> : <Spinner/>;
 		if(this.state.ingredients){
 			burger=(
 				<Aux>
 				<Burger ingredients={this.state.ingredients}/>
-				<BuildControls added={this.addIngredientHandler}
+				<BuildControls items={this.state.ingredients} added={this.addIngredientHandler}
 								removed={this.removeIngredientHandler}
 								disabled={disabledInfo}
 								ordered={this.purchaseHandler}
